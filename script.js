@@ -27,18 +27,20 @@ $(document).ready(function(){
       spacePressed = true;
       newSquare = true;
       side = getRandomInt(1, 4);
-      //square landed in box
       if(inBounds()){
-        console.log("in bounds");
         //level up
         score++;
-        speed = speed/1.4;
+        speed = speed/1.2;
         //make bounds smaller
-
+        squareDim -= 10;
       }
       else{
-        console.log("out");
         //make box bigger
+        squareDim += 5;
+        speed = speed*1.2;
+      }
+      if(squareDim <= 30){
+        winner();
       }
     }
   }
@@ -81,7 +83,6 @@ $(document).ready(function(){
     drawSquare();
     drawScore();
     makeMovingSquare(side);
-    console.log("speed: "+ speed);
     clearInterval(interval);
     interval = setInterval(draw, speed);
   }
@@ -134,6 +135,20 @@ $(document).ready(function(){
       }
     }
     return false;
+  }
+
+  function winner(){
+    alert("You won!");
+    document.location.reload();
+    squareCentreX = canvas.width/2;
+    squareCentreY = canvas.height/2;
+    squareDim = 400;
+    square = {x:0, y: 0, dx: 0, dy: 0};
+    spacePressed = false;
+    newSquare = true;
+    score = 0;
+    speed = 60;
+
   }
 
   interval = setTimeout(draw, speed);
