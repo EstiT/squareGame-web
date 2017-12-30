@@ -9,7 +9,6 @@ $(document).ready(function(){
   var squareDim = 400;
   var square = {x:0, y: 0, dx: 0, dy: 0};
   //---controls
-  var spacePressed = false;
   var side = getRandomInt(1, 4);
   var newSquare = true;
   //
@@ -19,36 +18,33 @@ $(document).ready(function(){
 
 
   document.addEventListener("keydown", keyDownHandler, false);
-  document.addEventListener("keyup", keyUpHandler, false);
+  canvas.addEventListener("click", clicked, false);
 
 
   function keyDownHandler(e) {
     if(e.keyCode == 32){
-      spacePressed = true;
-      newSquare = true;
-      side = getRandomInt(1, 4);
-      if(inBounds()){
-        //level up
-        score++;
-        speed = speed/1.2;
-        //make bounds smaller
-        squareDim -= 10;
-      }
-      else if(score > 0){
-        score--;
-        //make box bigger
-        squareDim += 5;
-        speed = speed*1.2;
-      }
-      if(squareDim <= 30){
-        winner();
-      }
+      clicked();
     }
   }
 
-  function keyUpHandler(e) {
-    if(e.keyCode == 32){
-      spacePressed = false;
+  function clicked(){
+    newSquare = true;
+    side = getRandomInt(1, 4);
+    if(inBounds()){
+      //level up
+      score++;
+      speed = speed/1.2;
+      //make bounds smaller
+      squareDim -= 10;
+    }
+    else if(score > 0){
+      score--;
+      //make box bigger
+      squareDim += 5;
+      speed = speed*1.2;
+    }
+    if(squareDim <= 30){
+      winner();
     }
   }
 
@@ -145,7 +141,6 @@ $(document).ready(function(){
     squareCentreY = canvas.height/2;
     squareDim = 400;
     square = {x:0, y: 0, dx: 0, dy: 0};
-    spacePressed = false;
     newSquare = true;
     score = 0;
     speed = 60;
