@@ -70,7 +70,7 @@ $(document).ready(function(){
   function drawSquare() {
     ctx.beginPath();
     ctx.rect(squareCentreX-squareDim/2, squareCentreY-squareDim/2, squareDim, squareDim);//x, y, w, h
-    ctx.fillStyle = "#FF0000";
+    ctx.fillStyle = "#2980B9";
     ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
     if(mobileCheck()){
       ctx.lineWidth = 10;
@@ -140,7 +140,7 @@ $(document).ready(function(){
       newSquare = false;
     }
     ctx.rect(square.x, square.y, size, size);
-    ctx.fillStyle = "#FF0000";
+    ctx.fillStyle = "#e74c3c";
     ctx.fill();
 
     //bounds checking
