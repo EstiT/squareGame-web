@@ -34,7 +34,8 @@ $(document).ready(function(){
         //make bounds smaller
         squareDim -= 10;
       }
-      else{
+      else if(score > 0){
+        score--;
         //make box bigger
         squareDim += 5;
         speed = speed*1.2;
