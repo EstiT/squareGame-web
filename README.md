@@ -1,10 +1,12 @@
 # squareGame
 
-Press the space bar when the red square is in the centre square to get points
+Press the space bar when the red square is in the centre square to get points. The game gradually gets harder and harder
+
 Objective: make the centre square really small
 
-What it looks like when you win:
-<img width="806" alt="screen shot 2017-12-29 at 6 50 45 pm" src="https://user-images.githubusercontent.com/17136826/34449777-3faabb6e-ecca-11e7-83ed-2acb6e6e8b7f.png">
+![recording-4](https://user-images.githubusercontent.com/17136826/34450042-72776a66-ecce-11e7-83d4-2d16b8e61bf8.gif)
 
 Idea/code inspiration from: https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
-and: https://itunes.apple.com/ca/app/stack/id1080487957?mt=8
+
+and:
+https://itunes.apple.com/ca/app/stack/id1080487957?mt=8
